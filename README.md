@@ -39,26 +39,26 @@ A qweather flutter plugin.
 ### 实时天气查询
 ```dart
   String location = '116.41,39.92'；
-  WeatherNow _weatherNow = await FlutterQweather.instance.getWeatherNow(location);
+  WeatherNow? _resp = await FlutterQweather.instance.getWeatherNow(location);
 ```
 
 ### 逐天天气查询
 
 ```dart
   String location = '116.41,39.92'；
-  WeatherNow _weatherNow = await FlutterQweather.instance.getWeatherDaily(location, WeatherDailyForecast.WeatherForecast3Day);
+  WeatherDailyResp? _resp = await FlutterQweather.instance.getWeatherDaily(location, WeatherDailyForecast.WeatherForecast3Day);
 ```
 
 ### 逐时天气查询
 ```dart
   String location = '116.41,39.92'；
-  WeatherNow _weatherNow = await FlutterQweather.instance.getWeatherHourly(location, WeatherHourlyForecast.WeatherForecast24Hour);
+  WeatherHourlyResp? _resp = await FlutterQweather.instance.getWeatherHourly(location, WeatherHourlyForecast.WeatherForecast24Hour);
 ```
 
 ### 中国地区未来2小时内每5分钟降水查询
 ```dart
   String location = '116.41,39.92'；
-  WeatherNow _weatherNow = await FlutterQweather.instance.getWeatherMinuteLy(location);
+  WeatherMinutelyResp? _resp = await FlutterQweather.instance.getWeatherMinuteLy(location);
 ```
 
 
