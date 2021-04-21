@@ -1,7 +1,6 @@
 name: flutter_qweather
 description: A qweather Flutter plugin.
 version: 0.0.2
-author: CyJaySong
 homepage: https://github.com/fluttercandies/flutter_qweather
 
 environment:
