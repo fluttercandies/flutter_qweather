@@ -1,7 +1,7 @@
 #import "FlutterQweatherPlugin.h"
 #import "MethodConstants.h"
 #import "DebugPrint/DebugPrint.h"
-#import "ApiWeather.h"
+#import "Api/ApiWeather.h"
 
 @implementation FlutterQweatherPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -20,6 +20,12 @@
       [self init:call.arguments result:result];
   }else if ([GetWeatherNow isEqualToString:call.method]){ /// 查询实时天气
       [ApiWeather getWeatherNow:call.arguments result:result];
+  }else if ([GetWeatherDaily isEqualToString:call.method]){ /// 获取逐天预报
+      [ApiWeather getWeatherDaily:call.arguments result:result];
+  }else if ([GetWeatherHourly isEqualToString:call.method]){ /// 获取逐时预报
+      [ApiWeather getWeatherHourly:call.arguments result:result];
+  }else if ([GetWeatherMinuteLy isEqualToString:call.method]){ /// 获取中国地区未来2小时内每5分钟降水
+      [ApiWeather getWeatherMinuteLy:call.arguments result:result];
   }else{
       result(FlutterMethodNotImplemented);
   }
@@ -38,7 +44,7 @@
     }else{
         QWeatherConfigInstance.appType = APP_TYPE_DEV;
     }
-  result([NSNumber numberWithBool:YES]);
+    result([NSNumber numberWithBool:YES]);
 }
 
 ///  设置  Debug

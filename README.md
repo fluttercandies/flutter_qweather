@@ -6,6 +6,9 @@ A qweather flutter plugin.
 
 ## 已有功能
   - [x] 实时天气查询
+  - [x] 逐天天气查询
+  - [x] 逐时天气查询
+  - [x] 中国地区未来2小时内每5分钟降水查询
   - [ ] 其他功能...
 
 ## 开发计划
@@ -30,15 +33,34 @@ A qweather flutter plugin.
         debug: true);
     await FlutterQweather.instance.init(config);
 ```
-
-### 查询实时天气
   location 为 LocationID 或者 经纬度;
   LocationID 可通过geo 接口查询 或 查看[https://github.com/qwd/LocationList](https://github.com/qwd/LocationList)
 
+### 实时天气查询
 ```dart
   String location = '116.41,39.92'；
   WeatherNow _weatherNow = await FlutterQweather.instance.getWeatherNow(location);
 ```
+
+### 逐天天气查询
+
+```dart
+  String location = '116.41,39.92'；
+  WeatherNow _weatherNow = await FlutterQweather.instance.getWeatherDaily(location, WeatherDailyForecast.WeatherForecast3Day);
+```
+
+### 逐时天气查询
+```dart
+  String location = '116.41,39.92'；
+  WeatherNow _weatherNow = await FlutterQweather.instance.getWeatherHourly(location, WeatherHourlyForecast.WeatherForecast24Hour);
+```
+
+### 中国地区未来2小时内每5分钟降水查询
+```dart
+  String location = '116.41,39.92'；
+  WeatherNow _weatherNow = await FlutterQweather.instance.getWeatherMinuteLy(location);
+```
+
 
 ## Demo 
 只打包了安卓[app-release.apk](app-release.apk)，ios 请自行运行 example

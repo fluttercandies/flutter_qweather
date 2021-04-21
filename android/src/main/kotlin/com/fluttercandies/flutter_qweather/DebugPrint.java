@@ -6,7 +6,7 @@ public class DebugPrint {
 
 
     public static void setDebug(boolean debug) {
-        if (_debug!= debug){
+        if (_debug != debug){
             System.out.println("com.fluttercandies.qweather: 设置调试模式：" + debug);
             _debug = debug;
         }

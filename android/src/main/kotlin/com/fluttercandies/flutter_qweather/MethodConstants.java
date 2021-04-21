@@ -10,4 +10,13 @@ public class MethodConstants {
     public static final String Init = "init";
     /// 获取实况天气数据
     public static final String GetWeatherNow = "getWeatherNow";
+
+    // 获取逐天预报
+    public static final String GetWeatherDaily = "getWeatherDaily";
+
+    // 获取逐时预报
+    public static final String GetWeatherHourly = "getWeatherHourly";
+
+    // 获取中国地区未来2小时内每5分钟降水
+    public static final String GetWeatherMinuteLy = "getWeatherMinuteLy";
 }
