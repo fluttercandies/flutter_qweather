@@ -32,14 +32,10 @@ class _MyAppState extends State<MyApp> {
   // 初始化 Qweather
   Future<void> initQweather() async {
     QweatherConfig config = QweatherConfig(
-//        publicIdForAndroid: 'HE2100000000000000',
-//        keyForAndroid: '84538637d3xxxxxxxxxxxxxxxxxxxxx',
-//        publicIdForIos: 'HE2100000000000000',
-//        keyForIos: 'aead742b4xxxxxxxxxxxxxxxxxxxxx',
-      publicIdForAndroid: 'HE2104231438091779',
-      keyForAndroid: '3070aee952484a69a7a80c32bca5155a',
-      publicIdForIos: 'HE2104231438091779',
-      keyForIos: '3070aee952484a69a7a80c32bca5155a',
+      publicIdForAndroid: 'HE2100000000000000',
+      keyForAndroid: '84538637d3xxxxxxxxxxxxxxxxxxxxx',
+      publicIdForIos: 'HE2100000000000000',
+      keyForIos: 'aead742b4xxxxxxxxxxxxxxxxxxxxx',
       biz: false,
       debug: true,
     );
