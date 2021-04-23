@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   /// LocationID 可通过geo 接口查询 或 查看https://github.com/qwd/LocationList
   String _location = "116.41,39.92";
   TextEditingController _controller = TextEditingController();
-  WeatherNow _weatherNow;
+  WeatherNowResp? _weatherNowResp;
 
   @override
   void initState() {
@@ -32,12 +32,13 @@ class _MyAppState extends State<MyApp> {
   // 初始化 Qweather
   Future<void> initQweather() async {
     QweatherConfig config = QweatherConfig(
-        publicIdForAndroid: 'HE2100000000000000',
-        keyForAndroid: '84538637d3xxxxxxxxxxxxxxxxxxxxx',
-        publicIdForIos: 'HE2100000000000000',
-        keyForIos: 'aead742b4xxxxxxxxxxxxxxxxxxxxx',
-        biz: false,
-        debug: true);
+      publicIdForAndroid: 'HE2100000000000000',
+      keyForAndroid: '84538637d3xxxxxxxxxxxxxxxxxxxxx',
+      publicIdForIos: 'HE2100000000000000',
+      keyForIos: 'aead742b4xxxxxxxxxxxxxxxxxxxxx',
+      biz: false,
+      debug: true,
+    );
     await FlutterQweather.instance.init(config);
     // await Qweather.instance.setDebug();
     queryWeatherNow();
@@ -45,9 +46,8 @@ class _MyAppState extends State<MyApp> {
 
   // 查询实时天气
   Future<void> queryWeatherNow() async {
-    setState(() => _weatherNow = null);
     // await Qweather.instance.getWeatherNow("101010100");
-    _weatherNow = await FlutterQweather.instance.getWeatherNow(_location);
+    _weatherNowResp = await FlutterQweather.instance.getWeatherNow(_location);
     setState(() {});
   }
 
@@ -85,18 +85,20 @@ class _MyAppState extends State<MyApp> {
                     ),
                     ElevatedButton(
                       child: Text("查询天气"),
-                      onPressed: _weatherNow == null || _location.trim().isEmpty
-                          ? null
-                          : queryWeatherNow,
+                      onPressed:
+                          _weatherNowResp == null || _location.trim().isEmpty
+                              ? null
+                              : queryWeatherNow,
                     )
                   ],
                 ),
               ),
             ),
             Expanded(
-                child: _weatherNow == null
-                    ? Center(child: Text("loading..."))
-                    : _weatherNowWidget),
+              child: _weatherNowResp == null
+                  ? Center(child: Text("loading..."))
+                  : _weatherNowWidget,
+            ),
             Container(
               padding: EdgeInsets.all(64),
               child: Text('Running on: $_platformVersion\n'),
@@ -111,30 +113,31 @@ class _MyAppState extends State<MyApp> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       alignment: Alignment.center,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
-          Text("原始数据来源：             ${_weatherNow.refer.sources.join(",")}"),
-          Text("使用许可：                ${_weatherNow.refer.license.join(",")}"),
+          Text(
+              "原始数据来源：             ${_weatherNowResp?.refer.sources.join(",")}"),
+          Text(
+              "使用许可：                ${_weatherNowResp?.refer.license.join(",")}"),
           Divider(),
-          Text("接口更新时间：            ${_weatherNow.basic.updateTime}"),
-          Text("所查询城市的天气预报网页：   ${_weatherNow.basic.fxLink}"),
+          Text("接口更新时间：            ${_weatherNowResp?.basic.updateTime}"),
+          Text("所查询城市的天气预报网页：   ${_weatherNowResp?.basic.fxLink}"),
           Divider(),
-          Text("实况观测时间：            ${_weatherNow.obsTime}"),
-          Text("体感温度，默认单位：摄氏度： ${_weatherNow.feelsLike}"),
-          Text("温度，默认单位：摄氏度：    ${_weatherNow.temp}"),
-          Text("实况天气状况代码：         ${_weatherNow.icon}"),
-          Text("实况天气状况：             ${_weatherNow.text}"),
-          Text("风向360角度：             ${_weatherNow.wind360}"),
-          Text("风向：                   ${_weatherNow.windDir}"),
-          Text("风力：                   ${_weatherNow.windScale}"),
-          Text("风速，公里/小时：          ${_weatherNow.windSpeed}"),
-          Text("相对湿度：                ${_weatherNow.humidity}"),
-          Text("降水量：                  ${_weatherNow.precip}"),
-          Text("大气压强：                 ${_weatherNow.pressure}"),
-          Text("能见度，默认单位：公里：     ${_weatherNow.vis}"),
-          Text("云量：                    ${_weatherNow.cloud}"),
-          Text("实况云量：                  ${_weatherNow.dew}"),
+          Text("实况观测时间：            ${_weatherNowResp?.now.obsTime}"),
+          Text("体感温度，默认单位：摄氏度： ${_weatherNowResp?.now.feelsLike}"),
+          Text("温度，默认单位：摄氏度：    ${_weatherNowResp?.now.temp}"),
+          Text("实况天气状况代码：         ${_weatherNowResp?.now.icon}"),
+          Text("实况天气状况：             ${_weatherNowResp?.now.text}"),
+          Text("风向360角度：             ${_weatherNowResp?.now.wind360}"),
+          Text("风向：                   ${_weatherNowResp?.now.windDir}"),
+          Text("风力：                   ${_weatherNowResp?.now.windScale}"),
+          Text("风速，公里/小时：          ${_weatherNowResp?.now.windSpeed}"),
+          Text("相对湿度：                ${_weatherNowResp?.now.humidity}"),
+          Text("降水量：                  ${_weatherNowResp?.now.precip}"),
+          Text("大气压强：                 ${_weatherNowResp?.now.pressure}"),
+          Text("能见度，默认单位：公里：     ${_weatherNowResp?.now.vis}"),
+          Text("云量：                    ${_weatherNowResp?.now.cloud}"),
+          Text("实况云量：                  ${_weatherNowResp?.now.dew}"),
         ],
       ),
     );
