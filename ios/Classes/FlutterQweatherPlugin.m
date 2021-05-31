@@ -1,7 +1,9 @@
 #import "FlutterQweatherPlugin.h"
 #import "MethodConstants.h"
 #import "DebugPrint/DebugPrint.h"
+#import "Api/ApiGeo.h"
 #import "Api/ApiWeather.h"
+
 
 @implementation FlutterQweatherPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -18,6 +20,14 @@
       [self setDebug:call.arguments result:result];
   }else if ([Init isEqualToString:call.method]){  /// 初始化
       [self init:call.arguments result:result];
+  }else if ([GeoCityLookup isEqualToString:call.method]){ /// 城市信息查询
+      [ApiGeo geoCityLookup:call.arguments result:result];
+  }else if ([GetGeoTopCity isEqualToString:call.method]){ /// 热门城市查询
+      [ApiGeo getGeoTopCity:call.arguments result:result];
+  }else if ([GeoPoiLookup isEqualToString:call.method]){ /// POI信息搜索
+      [ApiGeo geoPoiLookup:call.arguments result:result];
+  }else if ([GeoPoiRangeLookup isEqualToString:call.method]){ /// POI范围搜索
+      [ApiGeo geoPoiRangeLookup:call.arguments result:result];
   }else if ([GetWeatherNow isEqualToString:call.method]){ /// 查询实时天气
       [ApiWeather getWeatherNow:call.arguments result:result];
   }else if ([GetWeatherDaily isEqualToString:call.method]){ /// 获取逐天预报

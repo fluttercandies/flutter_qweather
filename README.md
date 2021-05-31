@@ -5,6 +5,10 @@
 A qweather flutter plugin.
 
 ## 已有功能
+  - [x] 城市信息查询
+  - [x] 热门城市查询
+  - [x] POI信息搜索
+  - [x] POI范围搜索
   - [x] 实时天气查询
   - [x] 逐天天气查询
   - [x] 逐时天气查询
@@ -60,7 +64,7 @@ A qweather flutter plugin.
   String location = '116.41,39.92'；
   WeatherMinutelyResp? _resp = await FlutterQweather.instance.getWeatherMinuteLy(location);
 ```
-
+### 其他接口....相信你能看懂怎么用
 
 ## Demo 
 只打包了安卓[app-release.apk](app-release.apk)，ios 请自行运行 example

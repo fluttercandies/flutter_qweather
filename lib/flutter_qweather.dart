@@ -4,10 +4,14 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/services.dart';
+import 'models/geo.dart';
 import 'models/weather.dart';
 import 'constants.dart';
 
+export 'models/geo.dart';
 export 'models/weather.dart';
+
+part 'api/geo_api.dart';
 
 part 'api/weather_api.dart';
 
@@ -29,7 +33,7 @@ class QweatherConfig {
       this.biz = false});
 }
 
-class FlutterQweather extends _ServiceApi with _Weather {
+class FlutterQweather extends _ServiceApi with _Geo, _Weather {
   FlutterQweather._();
 
   static FlutterQweather instance = FlutterQweather._();
@@ -63,7 +67,8 @@ class _ServiceApi {
       "debug": config.debug
     };
     final ok = await methodChannel.invokeMethod(MethodConstants.Init, param);
-    return print("和风天气：初始化结果: $ok");
+    if (config.debug) print("和风天气：初始化结果: $ok");
+    return;
   }
 
   /// 设置 Debug

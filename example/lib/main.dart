@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_qweather/constants.dart';
 import 'package:flutter_qweather/flutter_qweather.dart';
 
 void main() => runApp(MyApp());
@@ -17,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   /// _location
   /// LocationID 或者 经纬度;
   /// LocationID 可通过geo 接口查询 或 查看https://github.com/qwd/LocationList
-  String _location = "116.41,39.92";
+  String _location = "106.227305,29.592024";
   TextEditingController _controller = TextEditingController();
   WeatherNowResp? _weatherNowResp;
 
@@ -32,20 +33,22 @@ class _MyAppState extends State<MyApp> {
   // 初始化 Qweather
   Future<void> initQweather() async {
     QweatherConfig config = QweatherConfig(
-      publicIdForAndroid: 'HE2100000000000000',
-      keyForAndroid: '84538637d3xxxxxxxxxxxxxxxxxxxxx',
-      publicIdForIos: 'HE2100000000000000',
-      keyForIos: 'aead742b4xxxxxxxxxxxxxxxxxxxxx',
-      biz: false,
-      debug: true,
-    );
+        publicIdForAndroid: 'HE2104211812191773',
+        keyForAndroid: '83716e1718b64b22b5b9615300ac366e',
+        publicIdForIos: 'HE2104211812581604',
+        keyForIos: 'e5d46c6726d34584ae16eb2e4520e610',
+        biz: false,
+        debug: true);
     await FlutterQweather.instance.init(config);
     // await Qweather.instance.setDebug();
-    queryWeatherNow();
+    await queryWeatherNow();
+    // FlutterQweather.instance.getWeatherMinuteLy(_location);
+    FlutterQweather.instance.geoPoiRangeLookup('116.40000,39.88999', PoiType.scenic);
   }
 
   // 查询实时天气
   Future<void> queryWeatherNow() async {
+    setState(() => _weatherNowResp = null);
     // await Qweather.instance.getWeatherNow("101010100");
     _weatherNowResp = await FlutterQweather.instance.getWeatherNow(_location);
     setState(() {});

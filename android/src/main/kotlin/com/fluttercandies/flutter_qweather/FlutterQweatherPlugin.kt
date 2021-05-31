@@ -19,12 +19,15 @@ class FlutterQweatherPlugin : FlutterPlugin, MethodCallHandler {
         context = flutterPluginBinding.applicationContext
     }
 
-
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
         when (call.method) {
             MethodConstants.GetPlatformVersion -> result.success("Android ${android.os.Build.VERSION.RELEASE}")
             MethodConstants.SetDebug -> setDebug(call.arguments, result)
             MethodConstants.Init -> init(call.arguments, result)
+            MethodConstants.GeoCityLookup -> ApiGeo.geoCityLookup(context, call.arguments, result)
+            MethodConstants.GetGeoTopCity -> ApiGeo.getGeoTopCity(context, call.arguments, result)
+            MethodConstants.GeoPoiLookup -> ApiGeo.geoPoiLookup(context, call.arguments, result)
+            MethodConstants.GeoPoiRangeLookup -> ApiGeo.geoPoiRangeLookup(context, call.arguments, result)
             MethodConstants.GetWeatherNow -> ApiWeather.getWeatherNow(context, call.arguments, result)
             MethodConstants.GetWeatherDaily -> ApiWeather.getWeatherDaily(context, call.arguments, result)
             MethodConstants.GetWeatherHourly -> ApiWeather.getWeatherHourly(context, call.arguments, result)

@@ -14,7 +14,7 @@ A qweather Flutter plugin.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-  s.preserve_paths = 'Frameworks/*.framework'
+#  s.preserve_paths = 'Frameworks/*.framework'
   s.vendored_frameworks = 'QWeather.framework'
 #  s.xcconfig = { 'OTHER_LDFLAGS' => '-framework QWeather' }
   s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }

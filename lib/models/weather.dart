@@ -18,7 +18,7 @@ class WeatherNow {
   late String windDir; // 风向
   late String windScale; // 风力
   late String windSpeed; // 风速，公里/小时
-
+  /// fromMap
   WeatherNow.fromMap(Map<dynamic, dynamic> map) {
     cloud = map['cloud'] as String;
     dew = map['dew'] as String;
@@ -44,7 +44,7 @@ class WeatherNowResp {
   late Basic basic; // Basic 包含 接口更新时间, 	所查询城市的天气预报网页
   late Refer refer; // Refer 数据来源信息
   late WeatherNow now; // WeatherNow 实时天气
-
+  /// fromMap
   WeatherNowResp.fromMap(Map<dynamic, dynamic> map) {
     code = map['code'] as String;
     basic = Basic.fromMap(map['basic'] ?? Map());
@@ -81,7 +81,7 @@ class WeatherDaily {
   late String cloud; // 	当天云量
   late String uvIndex; // 	紫外线强度指数
   late String vis; // 	能见度，公里
-
+  /// fromMap
   WeatherDaily.fromMap(Map<dynamic, dynamic> map) {
     fxDate = map['fxDate'] ?? '';
     sunrise = map['sunrise'] ?? '';
@@ -118,7 +118,7 @@ class WeatherDailyResp {
   late Basic basic; // Basic 包含 接口更新时间, 	所查询城市的天气预报网页
   late Refer refer; // Refer 数据来源信息
   late List<WeatherDaily> daily; // 逐天预报
-
+  /// fromMap
   WeatherDailyResp.fromMap(Map<dynamic, dynamic> map) {
     code = map['code'] as String;
     basic = Basic.fromMap(map['basic'] ?? Map());
@@ -145,7 +145,7 @@ class WeatherHourly {
   late String pressure; // 	大气压强
   late String dew; // 露点温度
   late String cloud; // 云量，百分比	15
-
+  /// fromMap
   WeatherHourly.fromMap(Map<dynamic, dynamic> map) {
     fxTime = map['fxTime'] ?? '';
     temp = map['temp'] ?? '';
@@ -170,7 +170,7 @@ class WeatherHourlyResp {
   late Basic basic; // Basic 包含 接口更新时间, 	所查询城市的天气预报网页
   late Refer refer; // Refer 数据来源信息
   late List<WeatherHourly> hourly; // 逐时预报
-
+  /// fromMap
   WeatherHourlyResp.fromMap(Map<dynamic, dynamic> map) {
     code = map['code'] as String;
     basic = Basic.fromMap(map['basic'] ?? Map());
@@ -186,7 +186,7 @@ class WeatherMinutel {
   late String fxTime; // 预报日期 2021-04-21T17:25+08:00
   late String precip; // 	降水量
   late String type; // 降水类型
-
+  /// fromMap
   WeatherMinutel.fromMap(Map<dynamic, dynamic> map) {
     fxTime = map['fxTime'] ?? '';
     precip = map['precip'] ?? '';
@@ -201,7 +201,7 @@ class WeatherMinutelyResp {
   late Refer refer; // Refer 数据来源信息
   late String summary; // 分钟降水描述
   late List<WeatherMinutel> minutely; // 分钟降水
-
+  /// fromMap
   WeatherMinutelyResp.fromMap(Map<dynamic, dynamic> map) {
     code = map['code'] as String;
     summary = map['summary'] as String;

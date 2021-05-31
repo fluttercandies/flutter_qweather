@@ -36,7 +36,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
-  flutter_qweather: d9baff7f187b96c4c6b95d2cc36d27a324b95af2
+  flutter_qweather: 57ee9f99a24acea0507cc12aa653d5e2c31e0868
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
