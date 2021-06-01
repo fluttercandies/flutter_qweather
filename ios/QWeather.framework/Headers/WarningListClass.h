@@ -7,12 +7,13 @@
 //
 
 #import "QWeatherBaseModel.h"
-@class WarningLoc;
+@class WarningLoc,Refer;
 
 @interface WarningListClass : QWeatherBaseModel
 @property (nonatomic, copy) NSString *code;
 @property (nonatomic, copy) NSString *updateTime;
 @property (nonatomic, strong) NSArray<WarningLoc *> *warningLocList;
+@property (nonatomic , strong) Refer *refer;
 @end
 
 @interface WarningLoc : QWeatherBaseModel

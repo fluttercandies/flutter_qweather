@@ -45,7 +45,7 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation files('libs/QWeather_Public_Android_V4.4.jar')
+    implementation files('libs/QWeather_Public_Android_V4.5.jar')
     compile 'com.squareup.okhttp3:okhttp:3.9.0+'
     compile 'com.google.code.gson:gson:2.6.2+'
 }
