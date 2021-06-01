@@ -1,8 +1,13 @@
-# 和风天气 Flutter插件 flutter_qweather
+# Flutter 和风天气插件 
 
-和风天气插件
+[![pub package](https://img.shields.io/pub/v/flutter_qweather?logo=dart&label=stable&style=flat-square)](https://pub.dev/packages/flutter_qweather)
+[![pub package](https://img.shields.io/pub/v/flutter_qweather?color=42a012&include_prereleases&label=dev&logo=dart&style=flat-square)](https://pub.dev/packages/flutter_qweather)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/fluttercandies/flutter_qweather?logo=codefactor&logoColor=%23ffffff&style=flat-square)](https://www.codefactor.io/repository/github/fluttercandies/flutter_qweather)
+[![GitHub license](https://img.shields.io/github/license/fluttercandies/flutter_qweather?style=flat-square)](https://github.com/fluttercandies/flutter_qweather/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/fluttercandies/flutter_qweather?logo=github&style=flat-square)](https://github.com/fluttercandies/flutter_qweather/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/fluttercandies/flutter_qweather?logo=github&style=flat-square)](https://github.com/fluttercandies/flutter_qweather/network)
+<a target="_blank" href="https://jq.qq.com/?_wv=1027&k=5bcc0gy"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="FlutterCandies" title="FlutterCandies"></a>
 
-A qweather flutter plugin.
 
 ## 已有功能
   - [x] 城市信息查询
@@ -14,9 +19,6 @@ A qweather flutter plugin.
   - [x] 逐时天气查询
   - [x] 中国地区未来2小时内每5分钟降水查询
   - [ ] 其他功能...
-
-## 开发计划
-由于平时比较忙，计划每天增加一个接口。
 
 ## 运行
 ### 注册账号 并 get 秘钥
@@ -68,11 +70,6 @@ A qweather flutter plugin.
 
 ## Demo 
 只打包了安卓[app-release.apk](app-release.apk)，ios 请自行运行 example
-
-
-
-## 注意
-目前仅实现了查询实时天气(很短时间写的东西，别指望我写多少😂)，其他接口后续慢慢加上。
 
 ## 贡献代码
 第一次写跟原生交互的插件，望各位大大多多指点，有写得不好的地方，请直接用 PR 来怼我。

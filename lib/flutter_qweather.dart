@@ -17,12 +17,23 @@ part 'api/weather_api.dart';
 
 /// 和风天气配置
 class QweatherConfig {
+  /// publicId for Android
   String publicIdForAndroid;
+
+  /// key for Android
   String keyForAndroid;
+
+  /// publicId for iOS
   String publicIdForIos;
+
+  /// key for iOS
   String keyForIos;
+
+  /// 是否调试模式
   bool debug;
-  bool biz; // 是否商业模式
+
+  /// 是否商业模式
+  bool biz;
 
   QweatherConfig(
       {this.publicIdForAndroid = '',

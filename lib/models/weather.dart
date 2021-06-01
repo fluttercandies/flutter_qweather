@@ -3,21 +3,51 @@ import 'refer.dart';
 
 /// 实时天气
 class WeatherNow {
-  late String cloud; // 云量，百分比	15
-  late String dew; // 云量
-  late String feelsLike; // 体感温度，默认单位：摄氏度
-  late String humidity; // 相对湿度
-  late String icon; // 和风实况天气状况图标代码
-  late String obsTime; // 实况观测时间
-  late String precip; // 降水量
-  late String pressure; // 大气压强
-  late String temp; // 温度，默认单位：摄氏度
-  late String text; // 实况天气状况
-  late String vis; // 能见度，默认单位：公里
-  late String wind360; // 风向360角度
-  late String windDir; // 风向
-  late String windScale; // 风力
-  late String windSpeed; // 风速，公里/小时
+  /// 云量，百分比	15
+  late String cloud;
+
+  /// 云量
+  late String dew;
+
+  /// 体感温度，默认单位：摄氏度
+  late String feelsLike;
+
+  /// 相对湿度
+  late String humidity;
+
+  /// 和风实况天气状况图标代码
+  late String icon;
+
+  /// 实况观测时间
+  late String obsTime;
+
+  /// 降水量
+  late String precip;
+
+  /// 大气压强
+  late String pressure;
+
+  /// 温度，默认单位：摄氏度
+  late String temp;
+
+  /// 实况天气状况
+  late String text;
+
+  /// 能见度，默认单位：公里
+  late String vis;
+
+  /// 风向360角度
+  late String wind360;
+
+  /// 风向
+  late String windDir;
+
+  /// 风力
+  late String windScale;
+
+  /// 风速，公里/小时
+  late String windSpeed;
+
   /// fromMap
   WeatherNow.fromMap(Map<dynamic, dynamic> map) {
     cloud = map['cloud'] as String;
@@ -40,10 +70,18 @@ class WeatherNow {
 
 /// 实时天气查询结果
 class WeatherNowResp {
-  late String code; // API状态码
-  late Basic basic; // Basic 包含 接口更新时间, 	所查询城市的天气预报网页
-  late Refer refer; // Refer 数据来源信息
-  late WeatherNow now; // WeatherNow 实时天气
+  /// API状态码
+  late String code;
+
+  /// Basic 包含 接口更新时间, 	所查询城市的天气预报网页
+  late Basic basic;
+
+  /// Refer 数据来源信息
+  late Refer refer;
+
+  /// WeatherNow 实时天气
+  late WeatherNow now;
+
   /// fromMap
   WeatherNowResp.fromMap(Map<dynamic, dynamic> map) {
     code = map['code'] as String;
@@ -55,32 +93,84 @@ class WeatherNowResp {
 
 /// 逐天预报
 class WeatherDaily {
-  late String fxDate; // 预报日期
-  late String sunrise; // 日出时间
-  late String sunset; // 日落时间
-  late String moonRise; // 月升时间
-  late String moonSet; // 月落时间
-  late String moonPhase; // 月相名称
-  late String tempMax; // 最高温度
-  late String tempMin; // 最低温度
-  late String iconDay; // 白天天气状况代码
-  late String iconNight; // 晚间天气状况代码
-  late String textDay; // 白天天气状况描述
-  late String textNight; // 晚间天气状况描述
-  late String wind360Day; // 白天风向360角度
-  late String wind360Night; // 晚间风向360角度
-  late String windDirDay; // 白天风向
-  late String windDirNight; // 夜间风向
-  late String windScaleDay; // 白天风力
-  late String windScaleNight; // 夜间风力
-  late String windSpeedDay; // 白天风速，公里/小时
-  late String windSpeedNight; // 夜间风速，公里/小时
-  late String humidity; // 	相对湿度
-  late String precip; // 	降水量
-  late String pressure; // 	大气压强
-  late String cloud; // 	当天云量
-  late String uvIndex; // 	紫外线强度指数
-  late String vis; // 	能见度，公里
+  /// 预报日期
+  late String fxDate;
+
+  /// 日出时间
+  late String sunrise;
+
+  /// 日落时间
+  late String sunset;
+
+  /// 月升时间
+  late String moonRise;
+
+  /// 月落时间
+  late String moonSet;
+
+  /// 月相名称
+  late String moonPhase;
+
+  /// 最高温度
+  late String tempMax;
+
+  /// 最低温度
+  late String tempMin;
+
+  /// 白天天气状况代码
+  late String iconDay;
+
+  /// 晚间天气状况代码
+  late String iconNight;
+
+  /// 白天天气状况描述
+  late String textDay;
+
+  /// 晚间天气状况描述
+  late String textNight;
+
+  /// 白天风向360角度
+  late String wind360Day;
+
+  /// 晚间风向360角度
+  late String wind360Night;
+
+  /// 白天风向
+  late String windDirDay;
+
+  /// 夜间风向
+  late String windDirNight;
+
+  /// 白天风力
+  late String windScaleDay;
+
+  /// 夜间风力
+  late String windScaleNight;
+
+  /// 白天风速，公里/小时
+  late String windSpeedDay;
+
+  /// 夜间风速，公里/小时
+  late String windSpeedNight;
+
+  /// 	相对湿度
+  late String humidity;
+
+  /// 	降水量
+  late String precip;
+
+  /// 	大气压强
+  late String pressure;
+
+  /// 	当天云量
+  late String cloud;
+
+  /// 	紫外线强度指数
+  late String uvIndex;
+
+  /// 	能见度，公里
+  late String vis;
+
   /// fromMap
   WeatherDaily.fromMap(Map<dynamic, dynamic> map) {
     fxDate = map['fxDate'] ?? '';
@@ -114,10 +204,18 @@ class WeatherDaily {
 
 /// 逐天预报查询结果
 class WeatherDailyResp {
-  late String code; // API状态码 安卓成功是 'OK' ios 是 '200'
-  late Basic basic; // Basic 包含 接口更新时间, 	所查询城市的天气预报网页
-  late Refer refer; // Refer 数据来源信息
-  late List<WeatherDaily> daily; // 逐天预报
+  /// API状态码 安卓成功是 'OK' ios 是 '200'
+  late String code;
+
+  /// Basic 包含 接口更新时间、所查询城市的天气预报网页
+  late Basic basic;
+
+  /// Refer 数据来源信息
+  late Refer refer;
+
+  /// 逐天预报
+  late List<WeatherDaily> daily;
+
   /// fromMap
   WeatherDailyResp.fromMap(Map<dynamic, dynamic> map) {
     code = map['code'] as String;
@@ -131,20 +229,48 @@ class WeatherDailyResp {
 
 /// 逐时预报
 class WeatherHourly {
-  late String fxTime; // 预报日期 2021-04-21T18:00+08:00
-  late String temp; // 温度
-  late String icon; // 天气状况代码
-  late String text; // 天气状况描述
-  late String wind360; // 风向360角度
-  late String windDir; // 风向
-  late String windScaley; // 风力
-  late String windSpeed; // 风速，公里/小时
-  late String humidity; // 	相对湿度
-  late String precip; // 	降水量
-  late String pop; // 	逐小时预报降水概率，百分比数值，可能为空
-  late String pressure; // 	大气压强
-  late String dew; // 露点温度
-  late String cloud; // 云量，百分比	15
+  /// 预报日期 2021-04-21T18:00+08:00
+  late String fxTime;
+
+  /// 温度
+  late String temp;
+
+  /// 天气状况代码
+  late String icon;
+
+  /// 天气状况描述
+  late String text;
+
+  /// 风向360角度
+  late String wind360;
+
+  /// 风向
+  late String windDir;
+
+  /// 风力
+  late String windScaley;
+
+  /// 风速，公里/小时
+  late String windSpeed;
+
+  ///	相对湿度
+  late String humidity;
+
+  /// 降水量
+  late String precip;
+
+  /// 逐小时预报降水概率，百分比数值，可能为空
+  late String pop;
+
+  /// 大气压强
+  late String pressure;
+
+  /// 露点温度
+  late String dew;
+
+  /// 云量，百分比	15
+  late String cloud;
+
   /// fromMap
   WeatherHourly.fromMap(Map<dynamic, dynamic> map) {
     fxTime = map['fxTime'] ?? '';
@@ -166,10 +292,18 @@ class WeatherHourly {
 
 /// 逐时预报查询结果
 class WeatherHourlyResp {
-  late String code; // API状态码 安卓成功是 'OK' ios 是 '200'
-  late Basic basic; // Basic 包含 接口更新时间, 	所查询城市的天气预报网页
-  late Refer refer; // Refer 数据来源信息
-  late List<WeatherHourly> hourly; // 逐时预报
+  /// API状态码 安卓成功是 'OK' ios 是 '200'
+  late String code;
+
+  /// Basic 包含 接口更新时间, 	所查询城市的天气预报网页
+  late Basic basic;
+
+  /// Refer 数据来源信息
+  late Refer refer;
+
+  /// 逐时预报
+  late List<WeatherHourly> hourly;
+
   /// fromMap
   WeatherHourlyResp.fromMap(Map<dynamic, dynamic> map) {
     code = map['code'] as String;
@@ -183,9 +317,15 @@ class WeatherHourlyResp {
 
 /// 分钟降水
 class WeatherMinutel {
-  late String fxTime; // 预报日期 2021-04-21T17:25+08:00
-  late String precip; // 	降水量
-  late String type; // 降水类型
+  /// 预报日期 2021-04-21T17:25+08:00
+  late String fxTime;
+
+  /// 	降水量
+  late String precip;
+
+  /// 降水类型
+  late String type;
+
   /// fromMap
   WeatherMinutel.fromMap(Map<dynamic, dynamic> map) {
     fxTime = map['fxTime'] ?? '';
@@ -196,11 +336,21 @@ class WeatherMinutel {
 
 /// 分钟降水查询结果
 class WeatherMinutelyResp {
-  late String code; // API状态码 安卓成功是 'OK' ios 是 '200'
-  late Basic basic; // Basic 包含 接口更新时间, 	所查询城市的天气预报网页
-  late Refer refer; // Refer 数据来源信息
-  late String summary; // 分钟降水描述
-  late List<WeatherMinutel> minutely; // 分钟降水
+  /// API状态码 安卓成功是 'OK' ios 是 '200'
+  late String code;
+
+  /// Basic 包含 接口更新时间、所查询城市的天气预报网页
+  late Basic basic;
+
+  /// Refer 数据来源信息
+  late Refer refer;
+
+  /// 分钟降水描述
+  late String summary;
+
+  /// 分钟降水
+  late List<WeatherMinutel> minutely;
+
   /// fromMap
   WeatherMinutelyResp.fromMap(Map<dynamic, dynamic> map) {
     code = map['code'] as String;
