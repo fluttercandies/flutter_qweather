@@ -3,7 +3,7 @@
 #import "DebugPrint/DebugPrint.h"
 #import "Api/ApiGeo.h"
 #import "Api/ApiWeather.h"
-
+#import "Api/ApiIndices.h"
 
 @implementation FlutterQweatherPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -36,6 +36,10 @@
       [ApiWeather getWeatherHourly:call.arguments result:result];
   }else if ([GetWeatherMinuteLy isEqualToString:call.method]){ /// 获取中国地区未来2小时内每5分钟降水
       [ApiWeather getWeatherMinuteLy:call.arguments result:result];
+  }else if ([GetIndices1Day isEqualToString:call.method]){ /// 获取1天生活指数
+      [ApiIndices getIndices1Day:call.arguments result:result];
+  }else if ([GetIndices3Day isEqualToString:call.method]){ /// 获取3天生活指数
+      [ApiIndices getIndices3Day:call.arguments result:result];
   }else{
       result(FlutterMethodNotImplemented);
   }

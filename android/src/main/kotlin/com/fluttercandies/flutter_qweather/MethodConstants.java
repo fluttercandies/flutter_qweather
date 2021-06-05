@@ -32,4 +32,10 @@ public class MethodConstants {
 
     // 获取中国地区未来2小时内每5分钟降水
     public static final String GetWeatherMinuteLy = "GetWeatherMinuteLy";
+
+    // 获取1天生活指数
+    public static final String GetIndices1Day = "GetIndices1Day";
+
+    // 获取3天生活指数
+    public static final String GetIndices3Day = "GetIndices3Day";
 }

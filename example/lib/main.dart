@@ -43,7 +43,8 @@ class _MyAppState extends State<MyApp> {
     // await Qweather.instance.setDebug();
     await queryWeatherNow();
     // FlutterQweather.instance.getWeatherMinuteLy(_location);
-    FlutterQweather.instance.geoPoiRangeLookup('116.40000,39.88999', PoiType.scenic);
+    // FlutterQweather.instance.geoPoiRangeLookup('116.40000,39.88999', PoiType.scenic);
+    // FlutterQweather.instance.getIndices1Day('116.40000,39.88999',indicesTypes: {IndicesType.TRAV});
   }
 
   // 查询实时天气

@@ -32,6 +32,8 @@ class FlutterQweatherPlugin : FlutterPlugin, MethodCallHandler {
             MethodConstants.GetWeatherDaily -> ApiWeather.getWeatherDaily(context, call.arguments, result)
             MethodConstants.GetWeatherHourly -> ApiWeather.getWeatherHourly(context, call.arguments, result)
             MethodConstants.GetWeatherMinuteLy -> ApiWeather.getWeatherMinuteLy(context, call.arguments, result)
+            MethodConstants.GetIndices1Day -> ApiIndices.getIndices1Day(context, call.arguments, result)
+            MethodConstants.GetIndices3Day -> ApiIndices.getIndices3Day(context, call.arguments, result)
             else -> result.notImplemented()
         }
     }

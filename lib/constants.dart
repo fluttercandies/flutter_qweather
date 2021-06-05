@@ -32,6 +32,12 @@ class MethodConstants {
 
   /// 获取中国地区未来2小时内每5分钟降水
   static const String GetWeatherMinuteLy = 'GetWeatherMinuteLy';
+
+  /// 获取1天生活指数
+  static const String GetIndices1Day = "GetIndices1Day";
+
+  /// 获取3天生活指数
+  static const String GetIndices3Day = "GetIndices3Day";
 }
 
 /// 逐天可选枚举
@@ -61,8 +67,6 @@ enum WeatherHourlyForecast {
   WeatherForecast168Hour
 }
 
-// Z
-
 /// POI类型
 enum PoiType {
   /// 景点
@@ -72,5 +76,66 @@ enum PoiType {
   CSTA,
 
   /// 潮汐站点
-  TSTA,
+  TSTA
+}
+
+/// 生活指数常量
+class IndicesType {
+  final String code;
+
+  const IndicesType._(this.code);
+
+  /// 全部生活指数
+  static const IndicesType ALL = IndicesType._('ALL');
+
+  /// 运动指数
+  static const IndicesType SPT = IndicesType._('SPT');
+
+  /// 洗车指数
+  static const IndicesType CW = IndicesType._('CW');
+
+  /// 穿衣指数
+  static const IndicesType DRSG = IndicesType._('DRSG');
+
+  /// 钓鱼指数
+  static const IndicesType FIS = IndicesType._('FIS');
+
+  /// 紫外线指数
+  static const IndicesType UV = IndicesType._('UV');
+
+  /// 旅游指数
+  static const IndicesType TRAV = IndicesType._('TRAV');
+
+  /// 花粉过敏指数
+  static const IndicesType AG = IndicesType._('AG');
+
+  /// 舒适度指数
+  static const IndicesType COMF = IndicesType._('COMF');
+
+  /// 感冒指数
+  static const IndicesType FLU = IndicesType._('FLU');
+
+  /// 空气污染扩散条件指数
+  static const IndicesType AP = IndicesType._('AP');
+
+  /// 空调开启指数
+  static const IndicesType AC = IndicesType._('AC');
+
+  /// 太阳镜指数
+  static const IndicesType GL = IndicesType._('GL');
+
+  /// 化妆指数
+  static const IndicesType MU = IndicesType._('MU');
+
+  /// 晾晒指数
+  static const IndicesType DC = IndicesType._('DC');
+
+  /// 交通指数
+  static const IndicesType PTFC = IndicesType._('PTFC');
+
+  /// 防晒指数
+  static const IndicesType SPI = IndicesType._('SPI');
+
+  /// 滑雪指数，暂时获取不到
+  static const IndicesType SKI = IndicesType._('SKI');
 }

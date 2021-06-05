@@ -13,8 +13,7 @@
 /// 获取当前天气
 + (void) getWeatherNow:(id _Nullable)param result:(FlutterResult)result{
     QWeatherConfigInstance.location = param;
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_NOW
-      WithSuccess:^(WeatherBaseClass *rep) {
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_NOW WithSuccess:^(WeatherBaseClass *rep) {
         [DebugPrint print:[@"getWeatherNow WithSuccess: " stringByAppendingString:rep.description]];
         if (![rep.code isEqualToString:@"200"]){
             result(NULL);
@@ -51,8 +50,7 @@
     }else if ([dailyNum isEqualToNumber: @15]){
         inquireType = INQUIRE_TYPE_WEATHER_15D;
     }
-    [QWeatherConfigInstance weatherWithInquireType:inquireType
-      WithSuccess:^(WeatherBaseClass *rep) {
+    [QWeatherConfigInstance weatherWithInquireType:inquireType WithSuccess:^(WeatherBaseClass *rep) {
         [DebugPrint print:[@"getWeatherDaily WithSuccess: " stringByAppendingString:rep.description]];
         if (![rep.code isEqualToString:@"200"]){
             result(NULL);
@@ -94,8 +92,7 @@
     }else if ([hourlyNum isEqualToNumber: @168]){
         inquireType = INQUIRE_TYPE_WEATHER_168H;
     }
-    [QWeatherConfigInstance weatherWithInquireType:inquireType
-      WithSuccess:^(WeatherBaseClass *rep) {
+    [QWeatherConfigInstance weatherWithInquireType:inquireType WithSuccess:^(WeatherBaseClass *rep) {
         [DebugPrint print:[@"getWeatherHourly WithSuccess: " stringByAppendingString:rep.description]];
         if (![rep.code isEqualToString:@"200"]){
             result(NULL);
@@ -125,8 +122,7 @@
 /// 获取中国地区未来2小时内每5分钟降水
 + (void) getWeatherMinuteLy:(id _Nullable)param result:(FlutterResult)result{
     QWeatherConfigInstance.location = param;
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_MINUTELY
-      WithSuccess:^(WeatherMinutelyBaseClass *rep) {
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_WEATHER_MINUTELY WithSuccess:^(WeatherMinutelyBaseClass *rep) {
             [DebugPrint print:[@"getWeatherMinuteLy WithSuccess: " stringByAppendingString:rep.description]];
         if (![rep.code isEqualToString:@"200"]){
             result(NULL);

@@ -1,3 +1,10 @@
+## 0.0.4
+
+- update sdk.
+- realized life indices query.
+- 升级 SDK
+- 实现 生活指数查询
+
 ## 0.0.3
 
 - realized geo search.

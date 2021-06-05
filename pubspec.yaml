@@ -1,6 +1,6 @@
 name: flutter_qweather
 description: A qweather Flutter plugin. Free use of qweather api. Only Android and IOS platforms are supported.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/fluttercandies/flutter_qweather
 
 environment:

@@ -5,6 +5,7 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'models/geo.dart';
+import 'models/indices.dart';
 import 'models/weather.dart';
 import 'constants.dart';
 
@@ -12,6 +13,8 @@ export 'models/geo.dart';
 export 'models/weather.dart';
 
 part 'api/geo_api.dart';
+
+part 'api/indices_api.dart';
 
 part 'api/weather_api.dart';
 
@@ -44,7 +47,7 @@ class QweatherConfig {
       this.biz = false});
 }
 
-class FlutterQweather extends _ServiceApi with _Geo, _Weather {
+class FlutterQweather extends _ServiceApi with _Geo, _Indices, _Weather {
   FlutterQweather._();
 
   static FlutterQweather instance = FlutterQweather._();

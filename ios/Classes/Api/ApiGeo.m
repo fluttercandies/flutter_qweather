@@ -15,8 +15,7 @@
     QWeatherConfigInstance.location = paramDic[@"location"];
     QWeatherConfigInstance.number = paramDic[@"number"];
     QWeatherConfigInstance.range = paramDic[@"range"];
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_CITY_LOOKUP
-      WithSuccess:^(GeoBaseClass *rep) {
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_CITY_LOOKUP WithSuccess:^(GeoBaseClass *rep) {
         [DebugPrint print:[@"geoCityLookup WithSuccess: " stringByAppendingString:rep.description]];
         if (![rep.code isEqualToString:@"200"]){
             result(NULL);
@@ -46,8 +45,7 @@
     NSDictionary *paramDic = param;
     QWeatherConfigInstance.number = paramDic[@"number"];
     QWeatherConfigInstance.range = paramDic[@"range"];
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_TOPCITY
-      WithSuccess:^(GeoBaseClass *rep) {
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_TOPCITY WithSuccess:^(GeoBaseClass *rep) {
         [DebugPrint print:[@"geoCityLookup WithSuccess: " stringByAppendingString:rep.description]];
         if (![rep.code isEqualToString:@"200"]){
             result(NULL);
@@ -78,8 +76,7 @@
     QWeatherConfigInstance.number = paramDic[@"number"];
     QWeatherConfigInstance.type = paramDic[@"type"];
     QWeatherConfigInstance.city = paramDic[@"city"];
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_LOOKUP
-      WithSuccess:^(GeoBaseClass *rep) {
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_LOOKUP WithSuccess:^(GeoBaseClass *rep) {
         [DebugPrint print:[@"geoCityLookup WithSuccess: " stringByAppendingString:rep.description]];
         if (![rep.code isEqualToString:@"200"]){
             result(NULL);
@@ -110,8 +107,7 @@
     QWeatherConfigInstance.radius = paramDic[@"radius"];
     QWeatherConfigInstance.number = paramDic[@"number"];
     QWeatherConfigInstance.type = paramDic[@"type"];
-    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_RANGE
-      WithSuccess:^(GeoBaseClass *rep) {
+    [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_GEO_POI_RANGE WithSuccess:^(GeoBaseClass *rep) {
         [DebugPrint print:[@"geoCityLookup WithSuccess: " stringByAppendingString:rep.description]];
         if (![rep.code isEqualToString:@"200"]){
             result(NULL);
