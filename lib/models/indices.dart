@@ -33,7 +33,7 @@ class DailyIndices {
 
 /// 天气生活指数查询 结果
 class DailyIndicesResp {
-    /// API状态码
+  /// API状态码
   late String code;
 
   /// Refer 数据来源信息
