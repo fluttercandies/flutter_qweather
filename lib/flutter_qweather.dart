@@ -12,11 +12,11 @@ import 'constants.dart';
 export 'models/geo.dart';
 export 'models/weather.dart';
 
-part 'api/geo_api.dart';
+part 'apis/geo_api.dart';
 
-part 'api/indices_api.dart';
+part 'apis/indices_api.dart';
 
-part 'api/weather_api.dart';
+part 'apis/weather_api.dart';
 
 /// 和风天气配置
 class QweatherConfig {
@@ -54,10 +54,10 @@ class FlutterQweather extends _ServiceApi with _Geo, _Indices, _Weather {
 }
 
 class _ServiceApi {
-  final methodChannel = MethodChannel('com.fluttercandies.qweather');
+  final _methodChannel = MethodChannel('com.fluttercandies.qweather');
 
   Future<String> get platformVersion async {
-    final String? version = await methodChannel
+    final String? version = await _methodChannel
         .invokeMethod<String>(MethodConstants.GetPlatformVersion);
     return version!;
   }
@@ -80,13 +80,12 @@ class _ServiceApi {
       "biz": config.biz,
       "debug": config.debug
     };
-    final ok = await methodChannel.invokeMethod(MethodConstants.Init, param);
+    final ok = await _methodChannel.invokeMethod(MethodConstants.Init, param);
     if (config.debug) print("和风天气：初始化结果: $ok");
-    return;
   }
 
   /// 设置 Debug
   Future<void> setDebug([bool debug = true]) async {
-    return await methodChannel.invokeMethod(MethodConstants.SetDebug, debug);
+    return await _methodChannel.invokeMethod(MethodConstants.SetDebug, debug);
   }
 }

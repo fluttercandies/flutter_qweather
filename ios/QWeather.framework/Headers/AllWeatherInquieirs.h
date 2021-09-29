@@ -117,8 +117,6 @@ typedef NS_ENUM(NSInteger, BASIN_TYPE) {
     BASIN_TYPE_SI,//南印度洋
 };
 
-UIKIT_EXTERN NSString * const INDICES_TYPESTRING[];
-
 typedef NS_ENUM(NSInteger, SERCHMODE_TYPE) {
     SERCHMODE_TYPE_EXACT= 0,//精准查询
     SERCHMODE_TYPE_FUZZY = 1,//模糊搜索
@@ -261,11 +259,11 @@ typedef NS_ENUM(NSInteger, SERCHMODE_TYPE) {
 
 /**
  生活指数数据类型，包括洗车指数、穿衣指数、钓鱼指数等。可以一次性获取多个类型的生活指数.
- indices内 放入需要的INDICES_TYPESTRING类型，默认indices = @[INDICES_TYPESTRING[INDICES_TYPE_comf]]
+ indices内 放入需要的NSNumber类型，默认indices = @[[NSNumber numberWithInt:INDICES_TYPE_comf]]
  
  具体生活指数的类型参数值如下：
  */
-@property (nonatomic, strong) NSArray *indices;
+@property (nonatomic, strong) NSArray<NSNumber *> *indices;
 
 /**
 选择POI所在城市，可设定只搜索在特定城市内的POI信息。城市名称可以是中文、英文或城市的LocationID。默认全世界范围。
