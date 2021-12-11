@@ -6,7 +6,7 @@
 //  Copyright © 2021 Song. All rights reserved.
 //
 
-#import <QWeather/QWeather.h>
+#import "QWeather.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class  MoonPhase,Refer;
@@ -25,5 +25,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *value;
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,copy) NSString *illumination;
+@property (nonatomic,copy) NSString *icon;
 @end
 NS_ASSUME_NONNULL_END

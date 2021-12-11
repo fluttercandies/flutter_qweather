@@ -60,11 +60,11 @@
         for (Daily *one in rep.daily) {
             NSDictionary *oneDaily = @{
                 @"cloud": one.cloud, @"fxDate": one.fxDate, @"humidity":one.humidity,@"iconDay":one.iconDay, @"iconNight": one.iconNight,
-                @"moonPhase": one.moonPhase, @"moonset": one.moonset, @"moonrise": one.moonrise, @"precip": one.precip, @"pressure": one.pressure,
-                @"sunrise": one.sunrise, @"sunset": one.sunset, @"tempMax": one.tempMax, @"tempMin": one.tempMin, @"textDay": one.textDay,
-                @"textNight": one.textNight, @"uvIndex": one.uvIndex, @"vis": one.vis, @"wind360Day": one.wind360Day, @"wind360Night": one.wind360Night,
-                @"windDirDay": one.windDirDay, @"windDirNight": one.WindDirNight, @"windScaleDay": one.windScaleDay, @"windScaleNight": one.windScaleNight,
-                @"windSpeedDay": one.windSpeedDay, @"windSpeedNight": one.windSpeedNight
+                @"moonPhase": one.moonPhase, @"moonPhaseIcon": one.moonPhaseIcon, @"moonset": one.moonset, @"moonrise": one.moonrise,
+                @"precip": one.precip, @"pressure": one.pressure, @"sunrise": one.sunrise, @"sunset": one.sunset, @"tempMax": one.tempMax,
+                @"tempMin": one.tempMin, @"textDay": one.textDay, @"textNight": one.textNight, @"uvIndex": one.uvIndex, @"vis": one.vis,
+                @"wind360Day": one.wind360Day, @"wind360Night": one.wind360Night, @"windDirDay": one.windDirDay, @"windDirNight": one.WindDirNight,
+                @"windScaleDay": one.windScaleDay, @"windScaleNight": one.windScaleNight, @"windSpeedDay": one.windSpeedDay, @"windSpeedNight": one.windSpeedNight
             };
             [daily addObject:oneDaily];
         }

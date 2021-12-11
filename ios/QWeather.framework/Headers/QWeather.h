@@ -14,7 +14,7 @@ FOUNDATION_EXPORT double QWeatherVersionNumber;
 //! Project version string for QWeather.
 FOUNDATION_EXPORT const unsigned char QWeatherVersionString[];
 
-//  #import <QWeather/QWeather.h>
+//  #import "QWeather.h"
 
 
 /* 当前版本 2021-07-20 4.5 */
@@ -37,7 +37,7 @@ FOUNDATION_EXPORT const unsigned char QWeatherVersionString[];
  */
 
 
-#import <QWeather/AllWeatherInquieirs.h>
-#import <QWeather/DataBaseClasses.h>
+#import "AllWeatherInquieirs.h"
+#import "DataBaseClasses.h"
 
 

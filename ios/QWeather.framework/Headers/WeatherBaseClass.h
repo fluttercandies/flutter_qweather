@@ -58,6 +58,7 @@
 @property (nonatomic , copy) NSString              * vis;
 @property (nonatomic , copy) NSString              * cloud;
 @property (nonatomic , copy) NSString              * uvIndex;
+@property (nonatomic , copy) NSString              * moonPhaseIcon;
 @end
 @interface Hourly :QWeatherBaseModel
 @property (nonatomic , copy) NSString              * fxTime;

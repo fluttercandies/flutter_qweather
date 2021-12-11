@@ -22,45 +22,45 @@
     NSDictionary *paramDic = param;
     QWeatherConfigInstance.location = paramDic[@"location"];
     NSArray<NSString*> *indicesTypes = paramDic[@"indicesTypes"];
-    NSMutableArray<NSString*> *indicesTypesTmp = [NSMutableArray new];
+    NSMutableArray<NSNumber*> *indicesTypesTmp = [NSMutableArray new];
     for (int i = 0; i < indicesTypes.count; i++){
         NSString *str = [indicesTypes objectAtIndex:i];
         if ([str isEqualToString:@"SPT"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_spt]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_spt)];
         } else if ([str isEqualToString:@"CW"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_cw]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_cw)];
         } else if ([str isEqualToString:@"DRSG"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_drsg]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_drsg)];
         } else if ([str isEqualToString:@"FIS"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_fis]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_fis)];
         } else if ([str isEqualToString:@"UV"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_uv]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_uv)];
         } else if ([str isEqualToString:@"TRAV"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_trav]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_trav)];
         } else if ([str isEqualToString:@"AG"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_ag]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_ag)];
         } else if ([str isEqualToString:@"COMF"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_comf]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_comf)];
         } else if ([str isEqualToString:@"FLU"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_flu]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_flu)];
         } else if ([str isEqualToString:@"AP"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_ap]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_ap)];
         } else if ([str isEqualToString:@"AC"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_ac]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_ac)];
         } else if ([str isEqualToString:@"GL"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_gl]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_gl)];
         } else if ([str isEqualToString:@"MU"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_mu]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_mu)];
         } else if ([str isEqualToString:@"DC"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_dc]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_dc)];
         } else if ([str isEqualToString:@"PTEC"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_ptfc]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_ptfc)];
         } else if ([str isEqualToString:@"SPI"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_spi]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_spi)];
         } else if ([str isEqualToString:@"SKI"]){
-            [indicesTypesTmp addObject: INDICES_TYPESTRING[INDICES_TYPE_ski]];
+            [indicesTypesTmp addObject: @(INDICES_TYPE_ski)];
         } else {
-            indicesTypesTmp = [NSMutableArray arrayWithObject:INDICES_TYPESTRING[INDICES_TYPE_all]];
+            indicesTypesTmp = [NSMutableArray arrayWithObject:@(INDICES_TYPE_all)];
             break;
         }
     }

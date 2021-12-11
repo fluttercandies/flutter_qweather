@@ -111,6 +111,9 @@ class WeatherDaily {
   /// 月相名称
   late String moonPhase;
 
+  /// 月相图标代码
+  late String moonPhaseIcon;
+
   /// 最高温度
   late String tempMax;
 
@@ -179,6 +182,7 @@ class WeatherDaily {
     moonRise = map['moonRise'] ?? '';
     moonSet = map['moonSet'] ?? '';
     moonPhase = map['moonPhase'] ?? '';
+    moonPhaseIcon = map['moonPhaseIcon'] ?? '';
     tempMax = map['tempMax'] ?? '';
     tempMin = map['tempMin'] ?? '';
     iconDay = map['iconDay'] ?? '';

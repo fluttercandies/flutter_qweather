@@ -1,3 +1,10 @@
+## 0.0.6
+
+- update sdk 4.8.
+- 升级 SDK 4.8
+- BreakingChanges: Icon codes have been added
+- 重要改变: 图标代码有所增加
+
 ## 0.0.5
 
 - update sdk.

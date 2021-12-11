@@ -6,7 +6,7 @@
 //  Copyright © 2021 Song. All rights reserved.
 //
 
-#import <QWeather/QWeather.h>
+#import "QWeather.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class Storm,Refer;

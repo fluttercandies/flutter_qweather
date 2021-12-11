@@ -287,6 +287,12 @@ POI类型，搜索范围，可设置搜索半径，取值范围1-50，单位：�
 
 @property (nonatomic, copy) NSString *range;
 
+
+/**
+ 城市的上级行政区划，默认不限定行政区划。 可设定只在某个行政区划范围内进行搜索，用于排除重名城市或对结果进行过滤。例如 adm=beijing
+ */
+@property (nonatomic, copy) NSString *adm;
+
 /**
  查询方式(城市搜索专用属性)
  可选值:模糊检索(fuzzy)、精准检索(exact)
