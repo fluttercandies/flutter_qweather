@@ -38,4 +38,16 @@ public class MethodConstants {
 
     // 获取3天生活指数
     public static final String GetIndices3Day = "GetIndices3Day";
+
+    // 获取灾害预警
+    public static final String GetWarning = "GetWarning";
+
+    // 获取灾害预警列表
+    public static final String GetWarningList = "GetWarningList";
+
+    // 获取实时空气质量
+    public static final String GetAirNow = "GetAirNow";
+
+    // 获取5天空气质量预报
+    public static final String GetAir5Day = "GetAir5Day";
 }

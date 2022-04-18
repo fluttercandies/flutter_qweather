@@ -1,9 +1,12 @@
 #import "FlutterQweatherPlugin.h"
 #import "MethodConstants.h"
 #import "DebugPrint/DebugPrint.h"
+#import "Api/ApiAir.h"
 #import "Api/ApiGeo.h"
-#import "Api/ApiWeather.h"
 #import "Api/ApiIndices.h"
+#import "Api/ApiWeather.h"
+#import "Api/ApiWarning.h"
+
 
 @implementation FlutterQweatherPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -40,6 +43,14 @@
       [ApiIndices getIndices1Day:call.arguments result:result];
   }else if ([GetIndices3Day isEqualToString:call.method]){ /// 获取3天生活指数
       [ApiIndices getIndices3Day:call.arguments result:result];
+  }else if ([GetWarning isEqualToString:call.method]){ /// 获取灾害预警
+      [ApiWarning getWarning:call.arguments result:result];
+  }else if ([GetWarningList isEqualToString:call.method]){ /// 获取灾害预警列表
+      [ApiWarning getWarningList:call.arguments result:result];
+  }else if ([GetAirNow isEqualToString:call.method]){ /// 获取实时空气质量
+      [ApiAir getAirNow:call.arguments result:result];
+  }else if ([GetAir5Day isEqualToString:call.method]){ /// 获取5天空气质量预报
+      [ApiAir getAir5Day:call.arguments result:result];
   }else{
       result(FlutterMethodNotImplemented);
   }

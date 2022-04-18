@@ -1,3 +1,8 @@
+## 0.0.7
+
+- realized: disaster warning、air quality
+- 实现 灾害预警、空气质量
+
 ## 0.0.6
 
 - update sdk 4.8.

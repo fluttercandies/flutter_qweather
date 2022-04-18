@@ -30,3 +30,12 @@
 #define GetIndices1Day @"GetIndices1Day"
 // 获取3天生活指数
 #define GetIndices3Day @"GetIndices3Day"
+// 获取灾害预警
+#define GetWarning @"GetWarning"
+// 获取灾害预警列表
+#define GetWarningList @"GetWarningList"
+// 获取实时空气质量
+#define GetAirNow @"GetAirNow"
+// 获取5天空气质量预报
+#define GetAir5Day @"GetAir5Day"
+

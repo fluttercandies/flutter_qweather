@@ -34,6 +34,10 @@ class FlutterQweatherPlugin : FlutterPlugin, MethodCallHandler {
             MethodConstants.GetWeatherMinuteLy -> ApiWeather.getWeatherMinuteLy(context, call.arguments, result)
             MethodConstants.GetIndices1Day -> ApiIndices.getIndices1Day(context, call.arguments, result)
             MethodConstants.GetIndices3Day -> ApiIndices.getIndices3Day(context, call.arguments, result)
+            MethodConstants.GetWarning -> WarningApi.getWarning(context, call.arguments, result)
+            MethodConstants.GetWarningList -> WarningApi.getWarningList(context, call.arguments, result)
+            MethodConstants.GetAirNow -> AirApi.getAirNow(context, call.arguments, result)
+            MethodConstants.GetAir5Day -> AirApi.getAir5Day(context, call.arguments, result)
             else -> result.notImplemented()
         }
     }

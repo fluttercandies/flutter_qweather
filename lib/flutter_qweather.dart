@@ -4,17 +4,31 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/services.dart';
+import 'models/air.dart';
 import 'models/geo.dart';
 import 'models/indices.dart';
+import 'models/warning.dart';
 import 'models/weather.dart';
 import 'constants.dart';
 
 export 'models/geo.dart';
 export 'models/weather.dart';
 
+part 'apis/air_api.dart';
+
+part 'apis/astronomy_api.dart';
+
 part 'apis/geo_api.dart';
 
+part 'apis/historical_api.dart';
+
 part 'apis/indices_api.dart';
+
+part 'apis/ocean_api.dart';
+
+part 'apis/tropical_api.dart';
+
+part 'apis/warning_api.dart';
 
 part 'apis/weather_api.dart';
 
@@ -47,7 +61,17 @@ class QweatherConfig {
       this.biz = false});
 }
 
-class FlutterQweather extends _ServiceApi with _Geo, _Indices, _Weather {
+class FlutterQweather extends _ServiceApi
+    with
+        _Air,
+        _Astronomy,
+        _Geo,
+        _Historical,
+        _Indices,
+        _Ocean,
+        _Tropical,
+        _Warning,
+        _Weather {
   FlutterQweather._();
 
   static FlutterQweather instance = FlutterQweather._();

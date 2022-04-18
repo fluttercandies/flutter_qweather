@@ -45,6 +45,8 @@ class _MyAppState extends State<MyApp> {
     // FlutterQweather.instance.getWeatherMinuteLy(_location);
     // FlutterQweather.instance.geoPoiRangeLookup('116.40000,39.88999', PoiType.scenic);
     // FlutterQweather.instance.getIndices1Day('116.40000,39.88999',indicesTypes: {IndicesType.TRAV});
+    FlutterQweather.instance.getWarning('116.40000,39.88999');
+    FlutterQweather.instance.getWarningList(range: 'cn');
   }
 
   // 查询实时天气
@@ -141,7 +143,7 @@ class _MyAppState extends State<MyApp> {
           Text("大气压强：                 ${_weatherNowResp?.now.pressure}"),
           Text("能见度，默认单位：公里：     ${_weatherNowResp?.now.vis}"),
           Text("云量：                    ${_weatherNowResp?.now.cloud}"),
-          Text("实况云量：                  ${_weatherNowResp?.now.dew}"),
+          Text("实况云量：                 ${_weatherNowResp?.now.dew}"),
         ],
       ),
     );

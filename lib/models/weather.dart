@@ -156,22 +156,22 @@ class WeatherDaily {
   /// 夜间风速，公里/小时
   late String windSpeedNight;
 
-  /// 	相对湿度
+  /// 相对湿度
   late String humidity;
 
-  /// 	降水量
+  /// 降水量
   late String precip;
 
-  /// 	大气压强
+  /// 大气压强
   late String pressure;
 
-  /// 	当天云量
+  /// 当天云量
   late String cloud;
 
-  /// 	紫外线强度指数
+  /// 紫外线强度指数
   late String uvIndex;
 
-  /// 	能见度，公里
+  /// 能见度，公里
   late String vis;
 
   /// fromMap
@@ -252,7 +252,7 @@ class WeatherHourly {
   late String windDir;
 
   /// 风力
-  late String windScaley;
+  late String windScale;
 
   /// 风速，公里/小时
   late String windSpeed;
@@ -283,7 +283,7 @@ class WeatherHourly {
     text = map['text'] ?? '';
     wind360 = map['wind360'] ?? '';
     windDir = map['windDir'] ?? '';
-    windScaley = map['windScaley'] ?? '';
+    windScale = map['windScale'] ?? '';
     windSpeed = map['windSpeed'] ?? '';
     humidity = map['humidity'] ?? '';
     precip = map['precip'] ?? '';

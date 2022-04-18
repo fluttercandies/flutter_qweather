@@ -38,6 +38,18 @@ class MethodConstants {
 
   /// 获取3天生活指数
   static const String GetIndices3Day = "GetIndices3Day";
+
+  /// 获取灾害预警
+  static const String GetWarning = "GetWarning";
+
+  /// 获取灾害预警列表
+  static const String GetWarningList = "GetWarningList";
+
+  /// 获取实时空气质量
+  static const String GetAirNow = "GetAirNow";
+
+  /// 获取5天空气质量预报
+  static const String GetAir5Day = "GetAir5Day";
 }
 
 /// 逐天可选枚举
