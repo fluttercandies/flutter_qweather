@@ -2,11 +2,14 @@
 #import "MethodConstants.h"
 #import "DebugPrint/DebugPrint.h"
 #import "Api/ApiAir.h"
+#import "Api/ApiAstronomy.h"
 #import "Api/ApiGeo.h"
 #import "Api/ApiIndices.h"
 #import "Api/ApiWeather.h"
 #import "Api/ApiWarning.h"
-
+#import "Api/ApiHistorical.h"
+#import "Api/ApiOcean.h"
+#import "Api/ApiTropical.h"
 
 @implementation FlutterQweatherPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -51,6 +54,26 @@
       [ApiAir getAirNow:call.arguments result:result];
   }else if ([GetAir5Day isEqualToString:call.method]){ /// 获取5天空气质量预报
       [ApiAir getAir5Day:call.arguments result:result];
+  }else if ([GetHistoricalWeather isEqualToString:call.method]){ /// 获取历史天气
+      [ApiHistorical getHistoricalWeather:call.arguments result:result];
+  }else if ([GetHistoricalAir isEqualToString:call.method]){ /// 获取历史空气质量
+      [ApiHistorical getHistoricalAir:call.arguments result:result];
+  }else if ([GetSun isEqualToString:call.method]){ /// 获取日出日落
+      [ApiAstronomy getSun:call.arguments result:result];
+  }else if ([GetMoon isEqualToString:call.method]){ /// 获取月升月落月相
+      [ApiAstronomy getMoon:call.arguments result:result];
+  }else if ([GetSolarElevationAngle isEqualToString:call.method]){ /// 获取太阳高度角
+      [ApiAstronomy getSolarElevationAngle:call.arguments result:result];
+  }else if ([GetOceanTide isEqualToString:call.method]){ /// 获取潮汐
+      [ApiOcean getOceanTide:call.arguments result:result];
+  }else if ([GetOceanCurrents isEqualToString:call.method]){ /// 获取潮流
+      [ApiOcean getOceanCurrents:call.arguments result:result];
+  }else if ([GetStormList isEqualToString:call.method]){ /// 台风列表
+      [ApiTropical getStormList:call.arguments result:result];
+  }else if ([GetStormTrack isEqualToString:call.method]){ /// 台风实况和路径
+      [ApiTropical getStormTrack:call.arguments result:result];
+  }else if ([GetStormForecast isEqualToString:call.method]){ /// 台风预报
+      [ApiTropical getStormForecast:call.arguments result:result];
   }else{
       result(FlutterMethodNotImplemented);
   }

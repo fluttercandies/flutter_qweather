@@ -5,8 +5,11 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'models/air.dart';
+import 'models/astronomy.dart';
 import 'models/geo.dart';
+import 'models/historical.dart';
 import 'models/indices.dart';
+import 'models/tropical.dart';
 import 'models/warning.dart';
 import 'models/weather.dart';
 import 'constants.dart';

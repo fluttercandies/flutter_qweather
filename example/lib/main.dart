@@ -40,13 +40,20 @@ class _MyAppState extends State<MyApp> {
         biz: false,
         debug: true);
     await FlutterQweather.instance.init(config);
-    // await Qweather.instance.setDebug();
+    // await FlutterQweather.instance.setDebug();
     await queryWeatherNow();
     // FlutterQweather.instance.getWeatherMinuteLy(_location);
     // FlutterQweather.instance.geoPoiRangeLookup('116.40000,39.88999', PoiType.scenic);
     // FlutterQweather.instance.getIndices1Day('116.40000,39.88999',indicesTypes: {IndicesType.TRAV});
-    FlutterQweather.instance.getWarning('116.40000,39.88999');
-    FlutterQweather.instance.getWarningList(range: 'cn');
+    // FlutterQweather.instance.getWarning('116.40000,39.88999');
+    // FlutterQweather.instance.getWarningList(range: 'cn');
+    // FlutterQweather.instance.getSun('116.40000,39.88999', '20220419');
+    // FlutterQweather.instance.getMoon('116.40000,39.88999', '20220419');
+    // FlutterQweather.instance.getSolarElevationAngle(
+    //     location: '116.40000,39.88999', date: '20220419',
+    //     time: "1230", tz: "0800",  alt: "430");
+    FlutterQweather.instance.getHistoricalWeather('116.40000,39.88999', '20220419');
+    FlutterQweather.instance.getHistoricalAir('116.40000,39.88999', '20220419');
   }
 
   // 查询实时天气

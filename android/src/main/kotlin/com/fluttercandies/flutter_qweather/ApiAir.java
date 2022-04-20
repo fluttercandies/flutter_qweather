@@ -12,7 +12,7 @@ import java.util.Map;
 
 import io.flutter.plugin.common.MethodChannel;
 
-public class AirApi {
+public class ApiAir {
     /// 获取实时空气质量
     protected static void getAirNow(Context context, Object arguments, final MethodChannel.Result result) {
         String location = (String) arguments;

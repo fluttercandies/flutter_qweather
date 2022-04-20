@@ -38,4 +38,23 @@
 #define GetAirNow @"GetAirNow"
 // 获取5天空气质量预报
 #define GetAir5Day @"GetAir5Day"
-
+// 获取历史天气
+#define GetHistoricalWeather @"GetHistoricalWeather"
+// 获取历史空气质量
+#define GetHistoricalAir @"GetHistoricalAir"
+// 获取日出日落
+#define GetSun @"GetSun"
+// 获取月升月落月相
+#define GetMoon @"GetMoon"
+// 获取太阳高度角
+#define GetSolarElevationAngle @"GetSolarElevationAngle"
+// 获取潮汐
+#define GetOceanTide @"GetOceanTide"
+// 获取潮流
+#define GetOceanCurrents @"GetOceanCurrents"
+// 台风列表
+#define GetStormList @"GetStormList"
+// 台风实况和路径
+#define GetStormTrack @"GetStormTrack"
+// 台风预报
+#define GetStormForecast @"GetStormForecast"

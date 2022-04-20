@@ -24,7 +24,7 @@
         NSMutableArray<NSDictionary*> *stations = [NSMutableArray new];
         for (AirStation *one in rep.airStation)  {
             NSDictionary *oneStation = @{
-                @"name": one.name, @"id": one.cid, @"pubTime":one.pubTime,@"aqi":one.aqi, @"level": one.level,
+                @"name": one.name, @"id": one.cid, @"pubTime":one.pubTime, @"aqi":one.aqi, @"level": one.level,
                 @"category": one.category, @"primary": one.primary, @"pm10": one.pm10, @"pm2p5": one.pm2p5,
                 @"no2": one.no2, @"so2": one.so2, @"co": one.co, @"o3": one.o3};
             [stations addObject:oneStation];

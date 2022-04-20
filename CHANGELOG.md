@@ -1,7 +1,12 @@
+## 0.0.8
+
+- realized: disaster historical、astronomy、ocean、tropical
+- 实现 历史天气和空气质量、太阳和月亮、潮汐和潮流、热带气旋（台风）
+
 ## 0.0.7
 
 - realized: disaster warning、air quality
-- 实现 灾害预警、空气质量
+- 实现 灾害预警、空气质量、
 
 ## 0.0.6
 

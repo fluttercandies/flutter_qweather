@@ -50,4 +50,34 @@ public class MethodConstants {
 
     // 获取5天空气质量预报
     public static final String GetAir5Day = "GetAir5Day";
+
+    /// 获取历史天气
+    public static final String GetHistoricalWeather = "GetHistoricalWeather";
+
+    /// 获取历史空气质量
+    public static final String GetHistoricalAir = "GetHistoricalAir";
+
+    /// 获取日出日落
+    public static final String GetSun = "GetSun";
+
+    /// 获取月升月落月相
+    public static final String GetMoon = "GetMoon";
+
+    /// 获取太阳高度角
+    public static final String GetSolarElevationAngle = "GetSolarElevationAngle";
+
+    /// 获取潮汐
+    public static final String GetOceanTide = "GetOceanTide";
+
+    /// 获取潮流
+    public static final String GetOceanCurrents = "GetOceanCurrents";
+
+    /// 台风列表
+    public static final String GetStormList = "GetStormList";
+
+    /// 台风实况和路径
+    public static final String GetStormTrack = "GetStormTrack";
+
+    /// 台风预报
+    public static final String GetStormForecast = "GetStormForecast";
 }

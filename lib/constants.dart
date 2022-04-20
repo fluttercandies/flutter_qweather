@@ -50,52 +50,102 @@ class MethodConstants {
 
   /// 获取5天空气质量预报
   static const String GetAir5Day = "GetAir5Day";
+
+  /// 获取历史天气
+  static const String GetHistoricalWeather = "GetHistoricalWeather";
+
+  /// 获取历史空气质量
+  static const String GetHistoricalAir = "GetHistoricalAir";
+
+  /// 获取日出日落
+  static const String GetSun = "GetSun";
+
+  /// 获取月升月落月相
+  static const String GetMoon = "GetMoon";
+
+  /// 获取太阳高度角
+  static const String GetSolarElevationAngle = "GetSolarElevationAngle";
+
+  /// 获取潮汐
+  static const String GetOceanTide = "GetOceanTide";
+
+  /// 获取潮流
+  static const String GetOceanCurrents = "GetOceanCurrents";
+
+  /// 台风列表
+  static const String GetStormList = "GetStormList";
+
+  /// 台风实况和路径
+  static const String GetStormTrack = "GetStormTrack";
+
+  /// 台风预报
+  static const String GetStormForecast = "GetStormForecast";
 }
 
 /// 逐天可选枚举
-enum WeatherDailyForecast {
+class WeatherDailyForecast {
+  final int _day;
+
+  int get day => _day;
+
+  const WeatherDailyForecast._(this._day);
+
   /// 未来 3 天预告
-  WeatherForecast3Day,
+  static const WeatherForecast3Day = WeatherDailyForecast._(3);
 
   /// 未来 7 天预告
-  WeatherForecast7Day,
+  static const WeatherForecast7Day = WeatherDailyForecast._(7);
 
   /// 未来 10 天预告
-  WeatherForecast10Day,
+  static const WeatherForecast10Day = WeatherDailyForecast._(10);
 
   /// 未来 15 天预告
-  WeatherForecast15Day
+  static const WeatherForecast15Day = WeatherDailyForecast._(15);
 }
 
 /// 逐时可选枚举
-enum WeatherHourlyForecast {
+class WeatherHourlyForecast {
+  final int _hour;
+
+  int get hour => _hour;
+
+  const WeatherHourlyForecast._(this._hour);
+
   /// 未来 24 小时预告
-  WeatherForecast24Hour,
+  static const WeatherForecast24Hour = WeatherHourlyForecast._(24);
 
   /// 未来 72 小时预告
-  WeatherForecast72Hour,
+  static const WeatherForecast72Hour = WeatherHourlyForecast._(72);
 
   /// 未来 168 小时预告
-  WeatherForecast168Hour
+  static const WeatherForecast168Hour = WeatherHourlyForecast._(168);
 }
 
 /// POI类型
-enum PoiType {
+class PoiType {
+  final String _code;
+
+  String get code => _code;
+
+  const PoiType._(this._code);
+
   /// 景点
-  scenic,
+  static const PoiType scenic = PoiType._('scenic');
 
   /// 潮流站点
-  CSTA,
+  static const PoiType CSTA = PoiType._('CSTA');
 
   /// 潮汐站点
-  TSTA
+  static const PoiType TSTA = PoiType._('TSTA');
 }
 
 /// 生活指数常量
 class IndicesType {
-  final String code;
+  final String _code;
 
-  const IndicesType._(this.code);
+  String get code => _code;
+
+  const IndicesType._(this._code);
 
   /// 全部生活指数
   static const IndicesType ALL = IndicesType._('ALL');
@@ -150,4 +200,30 @@ class IndicesType {
 
   /// 滑雪指数，暂时获取不到
   static const IndicesType SKI = IndicesType._('SKI');
+}
+
+/// 单位参数
+class Unit {
+  final String code;
+
+  const Unit._(this.code);
+
+  static const Unit METRIC = Unit._('m');
+  static const Unit IMPERIAL = Unit._('i');
+}
+
+/// 流域
+class Basin {
+  final String _code;
+
+  String get code => _code;
+
+  const Basin._(this._code);
+
+  static const Basin AL = Basin._('AL'); // North Atlantic 北大西洋
+  static const Basin EP = Basin._('EP'); // Eastern Pacific 东太平洋
+  static const Basin NP = Basin._('NP'); // NorthWest Pacific 西北太平洋
+  static const Basin SP = Basin._('SP'); // SouthWestern Pacific 西南太平洋
+  static const Basin NI = Basin._('NI'); // North Indian 北印度洋
+  static const Basin SI = Basin._('SI'); // South Indian 南印度洋
 }

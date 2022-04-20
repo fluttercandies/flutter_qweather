@@ -33,20 +33,10 @@ mixin _Geo on _ServiceApi {
     Map param = {
       "location": location,
       "city": city,
-      "number": Platform.isAndroid ? number : number.toString()
+      "number": Platform.isAndroid ? number : number.toString(),
+      "type": type.code
     };
-    param["type"] = "scenic"; // 目前SDK只支持该选项
-    // switch (type) {
-    //   case PoiType.scenic:
-    //     param["type"] = "scenic";
-    //     break;
-    //   case PoiType.CSTA:
-    //     param["type"] = "CSTA";
-    //     break;
-    //   case PoiType.TSTA:
-    //     param["type"] = "TSTA";
-    //     break;
-    // }
+
     Map? value = await _methodChannel.invokeMapMethod(
         MethodConstants.GeoPoiLookup, param);
     return value == null ? null : GeoPoiLocationResp.fromMap(value);
@@ -58,20 +48,9 @@ mixin _Geo on _ServiceApi {
     Map param = {
       "location": location,
       "radius": Platform.isAndroid ? radius : radius.toString(),
-      "number": Platform.isAndroid ? number : number.toString()
+      "number": Platform.isAndroid ? number : number.toString(),
+      "type": type.code
     };
-    param["type"] = "scenic"; // 目前SDK只支持该选项
-    // switch (type) {
-    //   case PoiType.scenic:
-    //     param["type"] = "scenic";
-    //     break;
-    //   case PoiType.CSTA:
-    //     param["type"] = "CSTA";
-    //     break;
-    //   case PoiType.TSTA:
-    //     param["type"] = "TSTA";
-    //     break;
-    // }
     Map? value = await _methodChannel.invokeMapMethod(
         MethodConstants.GeoPoiRangeLookup, param);
     return value == null ? null : GeoPoiLocationResp.fromMap(value);

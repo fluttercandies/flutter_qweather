@@ -13,7 +13,7 @@ import java.util.Map;
 
 import io.flutter.plugin.common.MethodChannel;
 
-public class WarningApi {
+public class ApiWarning {
     /// 获取灾害预警
     protected static void getWarning(Context context, Object arguments, final MethodChannel.Result result) {
         String location = (String) arguments;

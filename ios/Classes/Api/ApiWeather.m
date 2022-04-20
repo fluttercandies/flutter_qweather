@@ -63,8 +63,9 @@
                 @"moonPhase": one.moonPhase, @"moonPhaseIcon": one.moonPhaseIcon, @"moonset": one.moonset, @"moonrise": one.moonrise,
                 @"precip": one.precip, @"pressure": one.pressure, @"sunrise": one.sunrise, @"sunset": one.sunset, @"tempMax": one.tempMax,
                 @"tempMin": one.tempMin, @"textDay": one.textDay, @"textNight": one.textNight, @"uvIndex": one.uvIndex, @"vis": one.vis,
-                @"wind360Day": one.wind360Day, @"wind360Night": one.wind360Night, @"windDirDay": one.windDirDay, @"windDirNight": one.WindDirNight,
-                @"windScaleDay": one.windScaleDay, @"windScaleNight": one.windScaleNight, @"windSpeedDay": one.windSpeedDay, @"windSpeedNight": one.windSpeedNight
+                @"wind360Day": one.wind360Day, @"wind360Night": one.wind360Night, @"windDirDay": one.windDirDay,@"windDirNight": one.WindDirNight,
+                @"windScaleDay": one.windScaleDay, @"windScaleNight": one.windScaleNight, @"windSpeedDay": one.windSpeedDay,
+                @"windSpeedNight": one.windSpeedNight
             };
             [daily addObject:oneDaily];
         }
@@ -101,9 +102,10 @@
         NSMutableArray<NSDictionary*> *hourly = [NSMutableArray new];
 
         for (Hourly *one in rep.hourly) {
-            NSDictionary *oneHourly = @{@"cloud": one.cloud, @"fxTime": one.fxTime, @"humidity":one.humidity,@"icon":one.icon, @"precip": one.precip,
-                                        @"pressure": one.pressure, @"temp": one.temp, @"text": one.text, @"wind360": one.wind360, @"windDir": one.windDir,
-                                        @"windScale": one.windScale, @"windSpeed":one.windSpeed, @"dew": one.dew, @"pop": one.pop};
+            NSDictionary *oneHourly = @{
+                @"cloud": one.cloud, @"fxTime": one.fxTime, @"humidity":one.humidity,@"icon":one.icon, @"precip": one.precip,
+                @"pressure": one.pressure, @"temp": one.temp, @"text": one.text, @"wind360": one.wind360, @"windDir": one.windDir,
+                @"windScale": one.windScale, @"windSpeed":one.windSpeed, @"dew": one.dew, @"pop": one.pop};
             [hourly addObject:oneHourly];
         }
         NSDictionary *refer = @{@"licenseList": rep.refer.license, @"sourcesList": rep.refer.sources};
