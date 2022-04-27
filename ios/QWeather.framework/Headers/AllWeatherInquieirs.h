@@ -121,6 +121,7 @@ typedef NS_ENUM(NSInteger, SERCHMODE_TYPE) {
     SERCHMODE_TYPE_EXACT= 0,//精准查询
     SERCHMODE_TYPE_FUZZY = 1,//模糊搜索
 };
+
 @interface AllWeatherInquieirs : NSObject
 
 #pragma mark -  请在 AppDelegate 中填写
@@ -156,14 +157,7 @@ typedef NS_ENUM(NSInteger, SERCHMODE_TYPE) {
 @property (nonatomic, assign) APP_TYPE appType;
 
 /**
- 需要查询的城市或地区，可输入以下值：
- 1. 城市ID：城市列表
- 2. 经纬度格式：经度,纬度（经度在前纬度在后，英文,分隔，十进制格式，北纬东经为正，南纬西经为负
- 3. 城市名称，支持中英文和汉语拼音
- 4. 城市名称，上级城市 或 省 或 国家，英文,分隔，此方式可以在重名的情况下只获取想要的地区的天气数据，例如 西安,陕西
- 5. IP
- 6. 根据请求自动判断，根据用户的请求获取IP，通过 IP 定位并获取城市数据
- 7. 可为空，系统自动获取当前设备所在经纬度，然后将获取到的经纬度作为location参数调用传location的接口
+ 城市名称，上级城市 或 省 或 国家，英文,分隔，此方式可以在重名的情况下只获取想要的地区的天气数据，例如 西安,陕西
  */
 
 @property (nonatomic, copy) NSString *location;

@@ -17,7 +17,7 @@ FOUNDATION_EXPORT const unsigned char QWeatherVersionString[];
 //  #import "QWeather.h"
 
 
-/* 当前版本 2021-07-20 4.5 */
+/* 当前版本 2021-11-19 4.9 */
 
 /**
  * 写在前面的（废）话
@@ -31,7 +31,7 @@ FOUNDATION_EXPORT const unsigned char QWeatherVersionString[];
  */
 
 /**
- * 使用时请仔细阅读相关文档
+ * 使用时请仔细阅读相关文档 https://dev.qweather.com/docs/ios-sdk/
  *
  * 其他内容这里不做赘述，祝你写 BUG 愉快
  */

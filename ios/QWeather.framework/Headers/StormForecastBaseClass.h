@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *pressure;
 @property (nonatomic, copy) NSString *windSpeed;
 @property (nonatomic, copy) NSString *moveSpeed;
+@property (nonatomic, copy) NSString *moveDir;
 @property (nonatomic, copy) NSString *move360;
 @end
 NS_ASSUME_NONNULL_END

@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 @class Storm,Refer;
 
 @interface StormListBaseClass : QWeatherBaseModel
+@property (nonatomic , copy) NSString              * code;
+@property (nonatomic , copy) NSString              * updateTime;
+@property (nonatomic , copy) NSString              * fxLink;
 @property (nonatomic, strong) NSArray<Storm *> *stormList;
 @property (nonatomic , strong) Refer *refer;
 @end

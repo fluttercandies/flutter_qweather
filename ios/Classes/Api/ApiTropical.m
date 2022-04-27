@@ -27,10 +27,10 @@
     }
     [QWeatherConfigInstance weatherWithInquireType:INQUIRE_TYPE_STORM_LIST WithSuccess:^(StormListBaseClass *rep) {
         [DebugPrint print:[@"getStormList WithSuccess: " stringByAppendingString:rep.description]];
-//        if (![rep.code isEqualToString:@"200"]){
-//            result(NULL);
-//            return;
-//        }
+        if (![rep.code isEqualToString:@"200"]){
+            result(NULL);
+            return;
+        }
         NSMutableArray<NSDictionary*> *stormList = [NSMutableArray new];
         for (Storm *one in rep.stormList) {
             NSMutableDictionary *oneStorm = [NSMutableDictionary new];
@@ -44,11 +44,11 @@
             }
             [stormList addObject:oneStorm];
         }
-//        NSDictionary *basic = @{@"fxLink": rep.fxLink, @"updateTime": rep.updateTime};
+        NSDictionary *basic = @{@"fxLink": rep.fxLink, @"updateTime": rep.updateTime};
         NSDictionary *refer = @{@"licenseList": rep.refer.license, @"sourcesList": rep.refer.sources};
         NSMutableDictionary *dic = [NSMutableDictionary new];
-//        [dic setValue:rep.code forKey:@"code"];
-//        [dic setValue:basic forKey:@"basic"];
+        [dic setValue:rep.code forKey:@"code"];
+        [dic setValue:basic forKey:@"basic"];
         [dic setValue:refer forKey:@"refer"];
         [dic setValue:stormList forKey:@"stormList"];
         result(dic);
