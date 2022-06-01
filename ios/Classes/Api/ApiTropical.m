@@ -150,7 +150,7 @@
         NSMutableArray<NSDictionary*> *forecastList = [NSMutableArray new];
         for (StormForecast *one in rep.forecast) {
             NSDictionary *oneForecast = @{@"fxTime":one.fxTime, @"lat":one.lat, @"lon":one.lon, @"type":one.type, @"pressure":one.pressure,
-                                          @"windSpeed":one.windSpeed, @"moveSpeed":one.moveSpeed, @"moveDir":@"", @"move360":one.move360};
+                                          @"windSpeed":one.windSpeed, @"moveSpeed":one.moveSpeed, @"moveDir":one.moveDir, @"move360":one.move360};
             [forecastList addObject:oneForecast];
         }
         NSDictionary *basic = @{@"fxLink": rep.fxLink, @"updateTime": rep.updateTime};
