@@ -18,6 +18,9 @@ PODS:
   - flutter_qweather (0.0.1):
     - AFNetworking (~> 4.0.0)
     - Flutter
+    - QWeather-SDK
+  - QWeather-SDK (4.10):
+    - AFNetworking (~> 4.0.1)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -26,6 +29,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - QWeather-SDK
 
 EXTERNAL SOURCES:
   Flutter:
@@ -35,9 +39,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  flutter_qweather: c1a5fbf39bd3f91440d5300c60f15b76496a254d
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_qweather: ca1274d27d146b749e5a617193d7acec763a4bb0
+  QWeather-SDK: 20ef99647726903bb1583ceedee1d418176cedd4
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
 
 COCOAPODS: 1.11.3
