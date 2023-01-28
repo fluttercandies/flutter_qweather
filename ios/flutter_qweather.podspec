@@ -14,13 +14,13 @@ A qweather Flutter plugin.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-#  s.preserve_paths = 'Frameworks/*.framework'
-  s.vendored_frameworks = 'QWeather.framework'
-#  s.xcconfig = { 'OTHER_LDFLAGS' => '-framework QWeather' }
+#  s.vendored_frameworks = 'QWeather.framework'
   s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   s.dependency 'AFNetworking','~>4.0.0'
   s.dependency 'Flutter'
-  s.platform = :ios, '8.0'
+  s.dependency 'QWeather-SDK'
+  s.platform = :ios, '9.0'
+  s.static_framework = true
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
