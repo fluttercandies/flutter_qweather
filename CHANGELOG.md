@@ -1,4 +1,8 @@
 [中文](CHANGELOG-ZH.md)
+## 0.0.11
+
+- update iOS sdk 4.10, support simulator
+
 ## 0.0.10
 
 - update android sdk 4.11

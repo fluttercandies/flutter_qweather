@@ -14,7 +14,6 @@ A qweather Flutter plugin.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-#  s.vendored_frameworks = 'QWeather.framework'
   s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
   s.dependency 'AFNetworking','~>4.0.0'
   s.dependency 'Flutter'
