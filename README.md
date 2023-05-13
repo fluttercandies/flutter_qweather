@@ -8,6 +8,9 @@
 [![GitHub forks](https://img.shields.io/github/forks/fluttercandies/flutter_qweather?logo=github&style=flat-square)](https://github.com/fluttercandies/flutter_qweather/network)
 <a target="_blank" href="https://jq.qq.com/?_wv=1027&k=5bcc0gy"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="FlutterCandies" title="FlutterCandies"></a>
 
+## qweather_icons
+
+若需要图标支持，请查看 [qweather_icons](https://pub.dev/packages/qweather_icons) 包。
 
 ## 已有功能
   - [x] 城市信息查询
@@ -57,10 +60,6 @@
 ```
   location 为 LocationID 或者 经纬度;
   LocationID 可通过geo 接口查询 或 查看[https://github.com/qwd/LocationList](https://github.com/qwd/LocationList)
-
-## qweather_icons
-
-若需要图标支持，请查看 [qweather_icons](https://pub.dev/packages/qweather_icons) 包。
 
 ### 实时天气查询
 ```dart
