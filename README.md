@@ -58,6 +58,10 @@
   location 为 LocationID 或者 经纬度;
   LocationID 可通过geo 接口查询 或 查看[https://github.com/qwd/LocationList](https://github.com/qwd/LocationList)
 
+## qweather_icons
+
+若需要图标支持，请查看 [qweather_icons](https://pub.dev/packages/qweather_icons) 包。
+
 ### 实时天气查询
 ```dart
   String location = '116.41,39.92'；
